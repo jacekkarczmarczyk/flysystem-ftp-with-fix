@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace League\Flysystem\Ftp;
 
+use JsonSerializable;
 use const FTP_BINARY;
 
-class FtpConnectionOptions
+class FtpConnectionOptions implements JsonSerializable
 {
     public function __construct(
         private string $host,
@@ -128,5 +129,26 @@ class FtpConnectionOptions
             $options['useRawListOptions'] ?? null,
             $options['trimEndingSlash'] ?? null,
         );
+    }
+
+    public function jsonSerialize(): array {
+        return [
+            'host' => $this->host(),
+            'root' => $this->root(),
+            'username' => $this->username(),
+            'password' => $this->password(),
+            'port' => $this->port(),
+            'ssl' => $this->ssl(),
+            'timeout' => $this->timeout(),
+            'utf8' => $this->utf8(),
+            'passive' => $this->passive(),
+            'transferMode' => $this->transferMode(),
+            'systemType' => $this->systemType(),
+            'ignorePassiveAddress' => $this->ignorePassiveAddress(),
+            'timestampsOnUnixListingsEnabled' => $this->timestampsOnUnixListingsEnabled(),
+            'recurseManually' => $this->recurseManually(),
+            'useRawListOptions' => $this->useRawListOptions(),
+            'trimEndingSlash' => $this->trimEndingSlash(),
+        ];
     }
 }
