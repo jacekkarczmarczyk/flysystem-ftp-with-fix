@@ -1,5 +1,5 @@
 {
-    "name": "league/flysystem-ftp",
+    "name": "jacekkarczmarczyk/flysystem-ftp-with-fix",
     "description": "FTP filesystem adapter for Flysystem.",
     "keywords": ["filesystem", "flysystem", "ftp", "ftpd", "files", "file"],
     "minimum-stability": "dev",

@@ -519,7 +519,14 @@ class FtpAdapter implements FilesystemAdapter
 
     private function ftpRawlist(string $options, string $path): array
     {
-        $path = rtrim($path, '/') . '/';
+        if ($this->connectionOptions->trimEndingSlash()) {
+            $path = rtrim($path, '/');
+            if ($path === '') {
+                $path = '/';
+            }
+        } else {
+            $path = rtrim($path, '/') . '/';
+        }
         $connection = $this->connection();
 
         if ($this->isPureFtpdServer()) {

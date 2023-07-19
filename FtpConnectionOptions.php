@@ -24,6 +24,7 @@ class FtpConnectionOptions
         private bool $enableTimestampsOnUnixListings = false,
         private bool $recurseManually = false,
         private ?bool $useRawListOptions = null,
+        private ?bool $trimEndingSlash = null,
     ) {
     }
 
@@ -102,6 +103,11 @@ class FtpConnectionOptions
         return $this->useRawListOptions;
     }
 
+    public function trimEndingSlash(): ?bool
+    {
+        return $this->trimEndingSlash;
+    }
+
     public static function fromArray(array $options): FtpConnectionOptions
     {
         return new FtpConnectionOptions(
@@ -120,6 +126,7 @@ class FtpConnectionOptions
             $options['timestampsOnUnixListingsEnabled'] ?? false,
             $options['recurseManually'] ?? true,
             $options['useRawListOptions'] ?? null,
+            $options['trimEndingSlash'] ?? null,
         );
     }
 }

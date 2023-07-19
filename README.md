@@ -1,9 +1,9 @@
 ## Sub-split of Flysystem for FTP.
 
-> ⚠️ this is a sub-split, for pull requests and issues, visit: https://github.com/thephpleague/flysystem
+> ⚠️ this is a fork of https://github.com/thephpleague/flysystem
 
 ```bash
-composer require league/flysystem-ftp
+composer require jacekkarczmarczyk/flysystem-ftp-with-fix
 ```
 
-View the [documentation](https://flysystem.thephpleague.com/docs/adapter/ftp/).
+See https://github.com/thephpleague/flysystem/issues/1641 for more details.
