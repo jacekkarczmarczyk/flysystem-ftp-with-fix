@@ -1,6 +1,6 @@
 {
-    "version": "3.15.0.2",
-    "name": "podatkipodatki/flysystem-ftp-with-fix",
+    "version": "3.15.0.3",
+    "name": "jacekkarczmarczyk/flysystem-ftp-with-fix",
     "description": "FTP filesystem adapter for Flysystem.",
     "keywords": ["filesystem", "flysystem", "ftp", "ftpd", "files", "file"],
     "minimum-stability": "stable",
