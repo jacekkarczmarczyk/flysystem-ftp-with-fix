@@ -99,6 +99,9 @@ class FtpAdapter implements FilesystemAdapter
             goto start;
         }
 
+        if (is_null($this->rootDirectory)) {
+            throw UnableToChangeRootFolder::forFolder($this->connectionOptions->root());
+        }
         ftp_chdir($this->connection, $this->rootDirectory);
 
         return $this->connection;
